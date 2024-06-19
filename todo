@@ -1,0 +1,18 @@
+10. Protect Routes(see recent chat) 
+11. Integrate requests with tokens
+12. delete review button functionality
+13. restaurant table rating average functionality
+14. website design ai tools: all restaurants page
+15. Improve sign page design
+
+9. [done] Auth
+   9.1 [done] register test, response for duplicate emails
+   9.2 [done] signin test
+   9.3 [done] make frontend
+   9.4 [done] error handling in frontend
+13. [done] review form stars
+    2.1. [done]react-toaster when submit pressed.
+14. [done] review form when add review pressed.
+15. [done] scale up or down.(see sajid video in History)
+16. [done] snap scrolling.(see sajid video in History)
+17. [done] filters when top picks pressed comes in sorted order.
