@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios"
-import { Rating } from "react-simple-star-rating"
+import axios from "axios";
+import { Rating } from "react-simple-star-rating";
+import { Link } from "react-router-dom";
 
 const AllRests = () => {
   const [rests, setRests] = useState([]);
@@ -34,9 +35,10 @@ const AllRests = () => {
       });
   }, []);
 
-  const handleAddReview = async (restId) => {
-    window.location.href = `/restaurants/add-review/${restId}`;
-  };
+  // const handleAddReview = async (restId) => {
+  //   // window.location.href = `/restaurants/add-review/${restId}`;
+  //   <Link to></Link>;
+  // };
 
   const handleDeleteReview = async (restId, reviewId) => {
     try {
@@ -110,12 +112,16 @@ const AllRests = () => {
             />
 
             <div className="mt-4">
-              <button
-                onClick={() => handleAddReview(rest.id)}
-                className="border border-black bg-gray text-black px-4 py-2 rounded hover:bg-gray-400 mr-2"
-              >
-                Add Review
-              </button>
+              <Link to={`/restaurants/add-review/${rest.id}`}>
+                <button
+                  className="border border-black bg-gray text-black px-4 py-2 rounded hover:bg-gray-400 mr-2"
+                >
+                  Add Review
+                </button>
+              </Link>
+                <Link to={`/reviews?rest=${rest.id}&name=${rest.rest_name}`} className="bg-gray text-black px-4 py-2 rounded hover:underline mr-2">
+                  See Reviews
+                </Link>
             </div>
           </div>
         ))}

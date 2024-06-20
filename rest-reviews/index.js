@@ -20,6 +20,9 @@ app.post("/api/login", authController.login);
 // all restaurants
 app.get("/api/all_rests", reviewController.getAllRests);
 
+// reviews
+app.get("/api/reviews", reviewController.getAllReviews);
+
 // get all reviews of one restaurant
 app.get("/api/rest/:id", reviewController.getRestReview);
 

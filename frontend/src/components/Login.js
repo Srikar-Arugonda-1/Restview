@@ -36,7 +36,7 @@ const Login = () => {
     try {
         const res =await axios.post(`http://localhost:5000/api/login`, formData);
         console.log(res);
-        localStorage.setItem("token", res.data.token);
+        // localStorage.setItem("token", res.data.token);
         setUser(true);
         toast.success("Successful login!!", {
             position: "top-center",

@@ -32,6 +32,15 @@ const addReview = async (req, res) => {
     }
 }
 
+const getAllReviews = async (req, res) => {
+    try {
+        const allReviews = await pool.query('SELECT * FROM reviews');
+        res.json(allReviews.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
 const deleteReview = async (req, res) => {
     try {
         const { id } = req.params;
@@ -46,5 +55,6 @@ module.exports = {
     getAllRests,
     getRestReview,
     addReview,
-    deleteReview
+    deleteReview,
+    getAllReviews
 }

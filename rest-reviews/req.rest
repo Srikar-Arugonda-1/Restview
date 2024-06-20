@@ -1,7 +1,9 @@
 
 
+GET http://localhost:5000/api/reviews
+
+
 GET http://localhost:5000/api/all_rests
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzE4MDg1ODU2LCJleHAiOjE3MTgwODk0NTZ9.fgzZFp8uucYiBkwqt9IGTXVExlPRRC7YNEt9J1pDFJY
 
 
 # POST http://localhost:5000/api/login

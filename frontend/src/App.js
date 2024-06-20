@@ -12,6 +12,7 @@ import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
 import ProtectedRoute from "./utils/ProtectedRoute.js";
 import { AuthProvider } from "./context/AuthContext.js";
+import Reviews from "./components/Reviews.js";
 
 function App() {
   return (
@@ -39,6 +40,17 @@ function App() {
               element={
                 <main className="mt-10">
                   <AllRests />
+                </main>
+              }
+            />
+            <Route
+              path="/reviews"
+              element={
+                <main className="snap-start mt-10">
+                  <br />
+                  <br />
+                  <br />
+                  <Reviews />
                 </main>
               }
             />

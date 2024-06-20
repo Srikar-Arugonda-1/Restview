@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
 
 const ReviewForm = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,7 @@ const ReviewForm = () => {
     rating: '',
     review: '',
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -18,18 +21,18 @@ const ReviewForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here\
-	const restId = window.location.pathname.split("/")[3];
-	console.log(formData);
-	try {
-		const res = await axios.post(`http://localhost:5000/api/add_review/${restId}`, formData);
-		console.log(res);
-    toast.success("Form submitted!!", {
-      position: "top-center",
-    });
-	} catch (err) {
-		console.error("Error submitting review:", err);
-	}
+  	const restId = window.location.pathname.split("/")[3];
+  	console.log(formData);
+	  try {
+	  	const res = await axios.post(`http://localhost:5000/api/add_review/${restId}`, formData);
+	  	console.log(res);
+      toast.success("Form submitted!!", {
+        position: "top-center",
+      });
+      navigate('/browse_rests');
+    } catch (err) {
+      console.error("Error submitting review:", err);
+    }
   };
 
   return (
